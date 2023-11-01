@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Character List{% endblock %}
+
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-body-emphasis">Character List</h1>
+    <a href="#" class="btn btn-sm btn-dark">Add new</a>
+</div>
+
+<div class="container">
+        {% for character in list %}
+        <div class="card w-75 mb-3 mx-auto">
+            <div class="card-body">
+                <div class="row">
+                    <div class="column col-8">
+                        <h5 class="card-title">{{ character.getName }}</h5>
+                    </div>
+                    <div class="column col-4 text-end">
+                        <a href="{% url 'detail' character.id %}" class="btn btn-sm btn-dark">Show</a>
+                        <a href="#" class="btn btn-sm btn-light">Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+{% endblock %}

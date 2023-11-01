@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Character - {{character.name}} {{character.last_name}}{% endblock %}
+
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-body-emphasis">{{character.name}} {{character.last_name}}</h1>
+    <a href="{% url 'index'  %}" class="btn btn-sm btn-light">Wróć</a>
+</div>
+{% endblock %}
