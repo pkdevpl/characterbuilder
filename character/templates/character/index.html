@@ -6,7 +6,7 @@
 <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold text-body-emphasis">Lista postaci</h1>
     <p>Cześć, {{user.username}}</p>
-    <a href="#" class="btn btn-sm btn-dark">Dodaj nową</a>
+    <a href="{% url 'character:create' %}}" class="btn btn-sm btn-dark">Dodaj nową</a>
     <a href="{% url 'user:logout' %}" class="btn btn-sm btn-light">Wyloguj</a>
 </div>
 

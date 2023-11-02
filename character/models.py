@@ -4,7 +4,9 @@ from django.db import models
 class Character(models.Model):
     name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    create_date = models.DateTimeField("date created")
+    race = models.CharField(max_length=50)
+    characterClass = models.CharField(max_length=50)
+    level = models.IntegerField()
     def getName(self):
         return self.name + " " + self.last_name
     def __str__(self):

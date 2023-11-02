@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block title %}Utwórz postać{% endblock %}
 
+{% block content %}
+<div class="container d-flex justify-content-center">
+  <main class="w-25 text-center" style="margin-top: 10rem">
+    <form action="{% url 'character:create' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_div }}
+      <button type="submit" class="btn btn-dark">Utwórz</button>
+    </form>
+  </main>
+</div>
 {% endblock %}

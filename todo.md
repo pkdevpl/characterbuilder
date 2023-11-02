@@ -11,6 +11,16 @@
   * dodać formularz bootstrapowy na zasadzie register user
 * formularz edycji
 * strona detali postaci
+* dodać modele 
+  * Quest
+    * name = resque mission, protect, collect resources
+    * description = 
+  * UserQuest
+    * user.ForeignKey
+    * quest.ForeignKey
+* naprawić formularz dodawania postaci - zbliżone do rejestracji użytkownika
+* 
+* 
 
 https://getbootstrap.com/docs/5.3/components/buttons/
 
