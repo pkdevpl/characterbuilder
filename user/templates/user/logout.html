@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Wylogowano pomyślnie{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <main class="w-25 text-center" style="margin-top: 10rem">
+        <h1 class="h3 mb-3 fw-normal">Wylogowano pomyślnie</h1>
+        <a href="{% url 'user:login' %}" class="btn-dark">Zaloguj się</a></p>
+    </main>
+</div>
+{% endblock %}

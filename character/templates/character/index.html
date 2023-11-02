@@ -4,25 +4,22 @@
 
 {% block content %}
 <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold text-body-emphasis">Character List</h1>
-    <a href="#" class="btn btn-sm btn-dark">Add new</a>
+    <h1 class="display-5 fw-bold text-body-emphasis">Lista postaci</h1>
+    <p>Cześć, {{user.username}}</p>
+    <a href="#" class="btn btn-sm btn-dark">Dodaj nową</a>
+    <a href="{% url 'user:logout' %}" class="btn btn-sm btn-light">Wyloguj</a>
 </div>
 
-<div class="container">
-        {% for character in list %}
-        <div class="card w-75 mb-3 mx-auto">
-            <div class="card-body">
-                <div class="row">
-                    <div class="column col-8">
-                        <h5 class="card-title">{{ character.getName }}</h5>
-                    </div>
-                    <div class="column col-4 text-end">
-                        <a href="{% url 'detail' character.id %}" class="btn btn-sm btn-dark">Show</a>
-                        <a href="#" class="btn btn-sm btn-light">Edit</a>
-                    </div>
-                </div>
-            </div>
+<div class="container d-flex flex-row justify-content-center">
+    {% for character in list %}
+    <div class="card mx-2" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ character.getName }}</h5>
+            <p class="card-text">Level: 0</p>
+            <a href="{% url 'character:detail' character.id %}" class="btn btn-sm btn-dark">Pokaż</a>
+            <a href="{% url 'character:detail' character.id %}" class="btn btn-sm btn-light">Edytuj</a>
         </div>
-        {% endfor %}
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

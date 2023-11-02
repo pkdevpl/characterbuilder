@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Zarejestruj konto{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <main class="w-25 text-center" style="margin-top: 10rem">
+        <form action="{% url 'user:register' %}" method="POST">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 fw-normal">Zarejestruj konto</h1>
+            <div class="form-floating mb-2">
+                <input id="floatingInput" name="username" type="text" class="form-control" placeholder="Użytkownik">
+                <label for="floatingInput">Nazwa użytkownika</label>
+            </div>
+            <div class="form-floating mb-2">
+                <input id="floatingPassword" name="password" type="password" class="form-control" placeholder="Hasło">
+                <label for="floatingPassword">Hasło</label>
+            </div>
+            <div class="form-floating mb-2">
+                <input id="floatingRepeatPassword" name="passwordRepeat" type="password" class="form-control" placeholder="Powtórz hasło">
+                <label for="floatingRepeatPassword">Powtórz hasło</label>
+            </div>
+            {% if error_message %}
+            <div class="alert alert-danger" role="alert">
+                {{ error_message }}
+            </div>
+            {% endif %}
+            <button class="btn btn-dark w-100 py-2" type="submit">Zarejestruj się</button>
+            <p class="mt-3">Masz już konto? <a href="{% url 'user:login' %}" class="btn-dark">Zaloguj się</a></p>
+        </form>
+    </main>
+</div>
+{% endblock %}
