@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Party{% endblock %}
+
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold text-body-emphasis">Lista postaci</h1>
+    <a href="{% url 'character:create' %}}" class="btn btn-sm btn-dark">Dodaj postać</a>
+</div>
+
+<div class="container d-flex flex-row justify-content-center">
+    {% for character in list %}
+    <div class="card mx-2" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ character.getName }}</h5>
+            <p class="card-text">Level: {{ character.getLevel }}</p>
+            <a href="{% url 'character:detail' character.id %}" class="btn btn-sm btn-dark">Wybierz Quest</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
